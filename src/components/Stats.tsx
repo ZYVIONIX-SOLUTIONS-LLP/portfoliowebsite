@@ -45,23 +45,18 @@ export const Stats = () => {
               whileHover={{ y: -6, transition: { duration: 0.25 } }}
               className="stat-card-gradient relative rounded-2xl py-8 px-6 text-center flex flex-col items-center justify-center transition-all duration-300 group overflow-hidden"
             >
-              {/* Subtle top inner light highlight */}
               <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#D0B58D]/40 to-transparent" />
-              
-              {/* Ambient bottom golden flare on hover */}
+
               <div className="absolute -bottom-10 inset-x-0 h-20 bg-[#B69A70]/20 blur-xl opacity-40 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
 
-              {/* Number Value */}
               <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-2 group-hover:scale-105 transition-transform duration-300">
                 {stat.value}
               </div>
 
-              {/* Stat Label */}
               <div className="text-sm sm:text-base font-normal text-white/90 tracking-wide font-sans">
                 {stat.label}
               </div>
 
-              {/* Subtle Subtext */}
               <div className="text-[11px] text-[#BDBDBD]/70 mt-1 uppercase tracking-wider">
                 {stat.subtext}
               </div>
