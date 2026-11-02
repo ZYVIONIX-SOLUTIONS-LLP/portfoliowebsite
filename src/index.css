@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-serif: 'Cinzel', serif;
+
+  --color-gold-champagne: #B69A70;
+  --color-gold-warm: #D0B58D;
+  --color-gold-border: #8F7654;
+  --color-gold-dark: #3A2F21;
+  --color-gold-sheen: #5C4A33;
+  --color-bg-primary: #050505;
+  --color-bg-secondary: #0A0A0A;
+  --color-bg-tertiary: #111111;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #BDBDBD;
+  --color-text-muted: #8E8E93;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #050505;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Arch Shape */
+.arch-frame {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Gold Gradient Card Background like reference */
+.stat-card-gradient {
+  background: linear-gradient(180deg, #101010 0%, #181510 35%, #2a2115 70%, #463722 100%);
+  border: 1px solid rgba(182, 154, 112, 0.22);
+}
+
+.stat-card-gradient:hover {
+  border-color: rgba(208, 181, 141, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(182, 154, 112, 0.25);
+}
+
+/* Subtle Gold Arch Border and Glow */
+.arch-border-glow {
+  box-shadow: 0 0 45px -10px rgba(182, 154, 112, 0.35),
+              inset 0 0 25px rgba(182, 154, 112, 0.15);
+}
+
+/* Luxury Pill Button */
+.gold-btn {
+  background: linear-gradient(180deg, #2b2318 0%, #15120d 100%);
+  border: 1px solid #8F7654;
+  color: #D0B58D;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(208, 181, 141, 0.3);
+}
+
+.gold-btn:hover {
+  background: linear-gradient(180deg, #3d3222 0%, #201b13 100%);
+  border-color: #D0B58D;
+  color: #FFFFFF;
+  box-shadow: 0 6px 25px rgba(182, 154, 112, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #252018;
+  border-radius: 4px;
+  border: 1px solid rgba(182, 154, 112, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3224;
+}
