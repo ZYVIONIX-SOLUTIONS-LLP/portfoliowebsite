@@ -25,11 +25,11 @@ export const About = () => {
             <div className="absolute inset-0 bg-[#B69A70]/15 rounded-full blur-3xl transform scale-90 -z-10 pointer-events-none" />
 
             <div className="relative max-w-[380px] w-full rounded-3xl overflow-hidden group border border-[#8F7654]/30 bg-[#0a0a0a]">
-              {/* Authentic User Image */}
+              {/* Authentic User Image with Sunglasses */}
               <img
-                src="/user_portrait_original.jpg"
+                src="/about-portrait.jpg"
                 alt="Melvin Cherian - Flutter Developer"
-                className="w-full h-auto aspect-[3/4] object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="w-full h-auto aspect-[4/5] sm:aspect-[3/4] object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />
 
