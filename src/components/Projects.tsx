@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Smartphone, Sparkles, Star, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { ExternalLink, Smartphone, Star, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 interface ProjectItem {
   id: string;
@@ -10,6 +10,7 @@ interface ProjectItem {
   description: string;
   techStack: string[];
   keyHighlights: string[];
+  playStoreUrl: string;
   featured?: boolean;
 }
 
@@ -26,6 +27,7 @@ export const Projects = () => {
       description:
         'Customizable festival and business poster generation platform with dynamic user text, brand logo placement, customer contact organization, and automated event reminders.',
       techStack: ['Flutter', 'Dart', 'Provider', 'Cloudinary', 'Canvas Rendering'],
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.posternova.posternova',
       keyHighlights: [
         'Dynamic canvas layer manipulation and text/logo placement',
         'Cloudinary cloud storage integration for multi-resolution assets',
@@ -41,6 +43,7 @@ export const Projects = () => {
       description:
         'Interactive rewards experience featuring spin-wheel engagement, sensor-based step tracking, real-time quizzes, reading activities, and automated coin redemption workflows.',
       techStack: ['Flutter', 'Firebase Auth', 'Firestore', 'Sensors API', 'BLoC'],
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.srikanth.redeemly',
       keyHighlights: [
         'Real-time pedometer and device accelerometer sensor integration',
         'Gamified spin-wheel engine with provably fair coin disbursement',
@@ -56,6 +59,7 @@ export const Projects = () => {
       description:
         'Comprehensive healthcare mobile application supporting prescription workflows, medical service discovery, doctor scheduling, and medicine inventory via a streamlined, HIPAA-aligned interface.',
       techStack: ['Flutter', 'REST APIs', 'Provider', 'Push Notifications (FCM)', 'Hive'],
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.clynix.clynix',
       keyHighlights: [
         'Offline-first medicine scheduling with Hive local persistent caching',
         'FCM push notification triggers for critical daily dosages',
@@ -71,6 +75,7 @@ export const Projects = () => {
       description:
         'Property discovery and reservation workflow helping travelers explore luxury farmhouses, check real-time availability, inspect high-res galleries, and process bookings securely.',
       techStack: ['Flutter', 'Razorpay', 'WebSocket', 'Sqflite', 'Custom UI'],
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.farmhouse.farmhouse_app',
       keyHighlights: [
         'Integrated Razorpay checkout workflow with webhook status reconciliation',
         'WebSocket live availability listener for double-booking prevention',
@@ -85,6 +90,7 @@ export const Projects = () => {
       description:
         'Task-focused companion app engineered for delivery riders, featuring active order manifests, geofenced routing, real-time push status alerts, and daily payout metrics.',
       techStack: ['Flutter', 'WebSocket', 'Google Maps API', 'Background Location'],
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.pixelmind.clynixrider',
       keyHighlights: [
         'Background geolocation and live telemetry transmission to dispatch dispatchers',
         'Interactive map routing with turn-by-turn waypoint indicators',
@@ -117,7 +123,7 @@ export const Projects = () => {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#BDBDBD] max-w-md font-light">
-            Real-world commercial mobile applications engineered with clean BLoC/Provider state architectures and responsive cross-platform delivery.
+            Real-world commercial mobile applications engineered with clean BLoC/Provider state architectures and deployed to the Google Play Store.
           </p>
         </div>
 
@@ -201,17 +207,32 @@ export const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Action Link & Details Toggle */}
-                  <div className="flex items-center justify-between pt-2">
+                  {/* Action Links */}
+                  <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                    {/* Direct Google Play Store Link */}
+                    <a
+                      href={project.playStoreUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D0B58D] hover:text-white transition-colors group/link py-1"
+                      aria-label={`View ${project.title} on Google Play Store`}
+                    >
+                      <svg className="w-4 h-4 fill-currentColor text-[#B69A70] group-hover/link:text-[#D0B58D] transition-colors" viewBox="0 0 24 24">
+                        <path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 01-.61-1.614V3.428c0-.623.228-1.19.61-1.614zm11.235 11.238l2.58 2.58-12.72 7.34 10.14-9.92zm2.58-2.58l-2.58-2.58 10.14-9.92-12.72 7.34 5.16 5.16zm1.052 1.053l3.633-2.097a1.69 1.69 0 000-2.936l-3.633-2.098-2.58 3.565 2.58 3.566z" />
+                      </svg>
+                      <span>Play Store</span>
+                      <ExternalLink className="w-3 h-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                    </a>
+
+                    {/* Architecture Details Trigger */}
                     <button
                       type="button"
                       onClick={() => setActiveModalProject(project)}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D0B58D] hover:text-white transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1 text-xs text-[#BDBDBD] hover:text-white transition-colors cursor-pointer py-1"
                     >
-                      <span>Key Architecture</span>
-                      <ChevronRight className="w-3.5 h-3.5" />
+                      <span>Architecture</span>
+                      <ChevronRight className="w-3.5 h-3.5 text-[#B69A70]" />
                     </button>
-                    <Sparkles className="w-3.5 h-3.5 text-[#B69A70]/60 group-hover:text-[#D0B58D] transition-colors" />
                   </div>
                 </div>
               </motion.div>
@@ -264,19 +285,23 @@ export const Projects = () => {
                   ))}
                 </ul>
 
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+                <div className="pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-3">
                   <a
-                    href="#contact"
-                    onClick={() => setActiveModalProject(null)}
-                    className="gold-btn text-xs px-5 py-2.5 rounded-full inline-flex items-center gap-1.5"
+                    href={activeModalProject.playStoreUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="gold-btn text-xs px-5 py-2.5 rounded-full inline-flex items-center gap-2 cursor-pointer"
                   >
-                    <span>Discuss Similar App</span>
+                    <svg className="w-3.5 h-3.5 fill-currentColor" viewBox="0 0 24 24">
+                      <path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 01-.61-1.614V3.428c0-.623.228-1.19.61-1.614zm11.235 11.238l2.58 2.58-12.72 7.34 10.14-9.92zm2.58-2.58l-2.58-2.58 10.14-9.92-12.72 7.34 5.16 5.16zm1.052 1.053l3.633-2.097a1.69 1.69 0 000-2.936l-3.633-2.098-2.58 3.565 2.58 3.566z" />
+                    </svg>
+                    <span>View on Google Play</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                   <button
                     type="button"
                     onClick={() => setActiveModalProject(null)}
-                    className="text-xs text-[#BDBDBD] hover:text-white"
+                    className="text-xs text-[#BDBDBD] hover:text-white cursor-pointer px-3 py-1.5"
                   >
                     Close
                   </button>
