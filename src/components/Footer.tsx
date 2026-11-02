@@ -44,7 +44,7 @@ export const Footer = () => {
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/melvin-cherian-5a1281297?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
               rel="noreferrer"
               className="text-[#8F7654] hover:text-[#D0B58D] transition-colors p-2 rounded-full hover:bg-white/5"

@@ -271,7 +271,7 @@ export const Contact = () => {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/melvin-cherian-5a1281297?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
               rel="noreferrer"
               className="px-5 py-2.5 rounded-full bg-[#14120e] border border-[#8F7654]/30 hover:border-[#D0B58D] text-xs font-semibold text-white hover:text-[#D0B58D] transition-colors inline-flex items-center gap-2"
